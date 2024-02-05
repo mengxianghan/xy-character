@@ -15,7 +15,7 @@
         "commitlint": "commitlint --edit"
     },
     "lint-staged": {
-        "src/(**/)?*.{ts}": [
+        "src/**/*.{ts,js}": [
             "npm run prettier",
             "npm run lint"
         ]
