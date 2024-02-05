@@ -36,6 +36,7 @@
     "files": [
         "dist/index.js",
         "dist/index.mjs",
+        "example/*",
         "*.json",
         "README.md"
     ],
