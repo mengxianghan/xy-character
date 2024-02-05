@@ -11,7 +11,7 @@ npm install --save-dev xy-character
 
 ## 使用
 
-> 为保证最终效果，拼音字体建议使用 `dist/fonts/pinyin.ttf`
+> 为保证最终效果，拼音字体建议使用 `dist/fonts/pinyin.ttf` [下载](https://github.com/mengxianghan/xy-character/tree/master/dist/fonts)
 
 ### 拼音
 
