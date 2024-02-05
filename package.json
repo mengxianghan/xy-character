@@ -6,17 +6,17 @@
     "main": "./dist/index.js",
     "browser": "./dist/index.js",
     "module": "./dist/index.mjs",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mengxianghan/xy-character"
-    },
-    "homepage": "https://github.com/mengxianghan/xy-character",
     "scripts": {
         "start": "cross-env NODE_ENV=development rollup -c -w",
         "build": "cross-env NODE_ENV=production rollup -c",
         "lint": "eslint --ext .ts --ignore-path .eslintignore --fix src",
         "prettier": "prettier --write ./src/* ./src/**/*"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mengxianghan/xy-character"
+    },
+    "homepage": "https://github.com/mengxianghan/xy-character",
     "keywords": [
         "svg",
         "opentype.js",
@@ -33,6 +33,12 @@
         "email": "1056811341@qq.com",
         "url": "https://github.com/mengxianghan/xy-character/issues"
     },
+    "files": [
+        "dist/index.js",
+        "dist/index.mjs",
+        "*.json",
+        "README.md"
+    ],
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.23.9",
