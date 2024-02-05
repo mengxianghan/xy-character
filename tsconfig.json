@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "moduleResolution": "Node",
+        "lib": ["dom", "es2015.promise", "es5"],
+        "paths": {
+            "@/*": ["./src/*"],
+        },
+        "strict": false,
+    },
+    "exclude": ["node_modules"],
+}

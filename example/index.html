@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="ie=edge" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                text-align: center;
+                padding: 8px;
+            }
+
+            .container svg {
+                vertical-align: middle;
+                display: inline-block;
+                height: 5em;
+                margin-inline: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            id="Tianzi"
+            class="container">
+            田字格
+        </div>
+        <div
+            id="Square"
+            class="container">
+            方格
+        </div>
+        <div
+            id="PinyinTianzi"
+            class="container">
+            拼音田字格
+        </div>
+        <div
+            id="PinyinSquare"
+            class="container">
+            拼音方格
+        </div>
+        <div
+            id="Pinyin"
+            class="container">
+            拼音汉字
+        </div>
+
+        <script src="../dist/index.js"></script>
+        <script>
+            const kaitiSrc = '../dist/fonts/kaiti.woff'
+            const pinyinSrc = '../dist/fonts/pinyin.ttf'
+
+            const tianzi = new Character.Tianzi()
+            tianzi.load(kaitiSrc).then(() => {
+                // 田字格
+                document.getElementById('Tianzi').appendChild(tianzi.getSVG('示例'))
+                // 田字格
+                document.getElementById('Tianzi').appendChild(tianzi.getSVG(2))
+                // 方格
+                document.getElementById('Square').appendChild(tianzi.getSVG('示例', { gridType: 2 }))
+                document.getElementById('Square').appendChild(tianzi.getSVG(2, { gridType: 2 }))
+            })
+
+            const pinyinTianzi = new Character.PinyinTianzi()
+            pinyinTianzi.load([pinyinSrc, kaitiSrc]).then(() => {
+                document.getElementById('PinyinTianzi').appendChild(
+                    pinyinTianzi.getSVG(
+                        [
+                            { pinyin: 'shì', chinese: '示' },
+                            { pinyin: 'lì', chinese: '例' },
+                        ],
+                        { attrs: { style: 'height: 5em; vertical-align: -100%' } }
+                    )
+                )
+
+                document
+                    .getElementById('PinyinTianzi')
+                    .appendChild(
+                        pinyinTianzi.getSVG(
+                            [{ pinyin: 'shì' }, { pinyin: 'lì' }],
+                            { attrs: { style: 'height: 5em; vertical-align: -100%' } }
+                        )
+                    )
+
+                document.getElementById('PinyinSquare').appendChild(
+                    pinyinTianzi.getSVG(
+                        [
+                            { pinyin: 'shì', chinese: '示' },
+                            { pinyin: 'lì', chinese: '例' },
+                        ],
+                        { gridType: 2, attrs: { style: 'height: 5em; vertical-align: -100%' } }
+                    )
+                )
+
+                document
+                    .getElementById('PinyinSquare')
+                    .appendChild(
+                        pinyinTianzi.getSVG(
+                            [{ pinyin: 'shì' }, { pinyin: 'lì' }],
+                            { gridType: 2, attrs: { style: 'height: 5em; vertical-align: -100%' } }
+                        )
+                    )
+            })
+
+            const pinyin = new Character.Pinyin()
+            pinyin.load([pinyinSrc, kaitiSrc]).then(() => {
+                const svg = pinyin.getSVG(
+                    [
+                        { pinyin: 'shì', chinese: '示' },
+                        { pinyin: 'lì', chinese: '例' },
+                    ],
+                    { attrs: { style: 'vertical-align: bottom' } }
+                )
+                document.getElementById('Pinyin').appendChild(svg)
+            })
+
+            function toBase64(svg) {
+                const encodeData = new XMLSerializer().serializeToString(svg)
+                const base64 = `data:image/svg+xml;base64,${window.btoa(unescape(encodeURIComponent(encodeData)))}`
+                console.log(base64)
+            }
+        </script>
+    </body>
+</html>

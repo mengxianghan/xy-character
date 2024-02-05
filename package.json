@@ -1,0 +1,64 @@
+{
+    "name": "xy-character",
+    "version": "1.0.0",
+    "description": "字符转svg，支持田字格、方格、拼音",
+    "type": "module",
+    "main": "./dist/index.js",
+    "browser": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mengxianghan/xy-character"
+    },
+    "homepage": "https://github.com/mengxianghan/xy-character",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development rollup -c -w",
+        "build": "cross-env NODE_ENV=production rollup -c",
+        "lint": "eslint --ext .ts --ignore-path .eslintignore --fix src",
+        "prettier": "prettier --write ./src/* ./src/**/*"
+    },
+    "keywords": [
+        "svg",
+        "opentype.js",
+        "text",
+        "tianzige",
+        "fangge",
+        "path"
+    ],
+    "author": {
+        "name": "mengxianghan",
+        "email": "1056811341@qq.com"
+    },
+    "bugs": {
+        "email": "1056811341@qq.com",
+        "url": "https://github.com/mengxianghan/xy-character/issues"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.23.9",
+        "@babel/plugin-transform-typescript": "^7.23.6",
+        "@babel/preset-env": "^7.23.9",
+        "@rollup/plugin-alias": "^5.1.0",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/node": "^20.11.16",
+        "@typescript-eslint/eslint-plugin": "^6.20.0",
+        "@typescript-eslint/parser": "^6.20.0",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.4.1",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "lodash-es": "^4.17.21",
+        "opentype.js": "^1.3.4",
+        "prettier": "^3.2.4",
+        "rollup-plugin-cleaner": "^1.0.0",
+        "rollup-plugin-copy": "^3.5.0",
+        "rollup-plugin-livereload": "^2.0.5",
+        "rollup-plugin-serve": "^1.1.1",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.3"
+    }
+}
